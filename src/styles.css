@@ -1,5 +1,5 @@
 body {
-  margin: 7% 30%;
+  margin: 7% 25%;
 }
 
 #page-title {
@@ -11,12 +11,14 @@ body {
 }
 
 #scores {
-  margin-right: 7%;
+  margin-right: 15%;
 }
 
-/* #refresh-button {
-  justify-self: center;
-} */
+#refresh-button {
+  height: 25px;
+  margin-left: auto;
+  align-self: center;
+}
 
 #form {
   flex-direction: column;
