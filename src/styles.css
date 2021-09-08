@@ -1,3 +1,47 @@
-h1 {
-  color: red;
+body {
+  margin: 7% 30%;
+}
+
+#page-title {
+  margin-bottom: 70px;
+}
+
+.flex {
+  display: flex;
+}
+
+#scores {
+  margin-right: 7%;
+}
+
+/* #refresh-button {
+  justify-self: center;
+} */
+
+#form {
+  flex-direction: column;
+  align-items: center;
+}
+
+#score-list {
+  border: 1px solid black;
+  list-style: none;
+  width: 300px;
+  padding-inline-start: 0;
+}
+
+#score-list > li {
+  padding: 5px 0 5px 10px;
+}
+
+#score-list > li:nth-of-type(odd) {
+  background-color: #e9e9f9;
+}
+
+#list-item {
+  background-color: #e9e9f9;
+}
+
+#submit {
+  align-self: flex-end;
 }
