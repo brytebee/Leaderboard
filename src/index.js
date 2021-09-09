@@ -1,18 +1,13 @@
 import './styles.css';
 
 const baseUrl = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/03MSTYAna9kTLSUQIVGU/scores/';
+// const baseUrl = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/2mpfETqzjV8p0jlHEbyh/scores/';
 
 const getData = async () => {
-  const req = (await fetch(baseUrl)).json();
-  const res = await req;
-
+  const req = async () => (await fetch(baseUrl)).json();
+  const res = await req();
   const scoreList = res.result;
-  const pageList = document.getElementById('score-list');
-  scoreList.forEach((user) => {
-    const player = Object.values(user);
-    // player.sort((a, b) => a - b)
-    pageList.append(player[0], player[1]);
-  });
+  displayData(scoreList);
 };
 
 const sendData = async () => {
@@ -32,6 +27,25 @@ const sendData = async () => {
   document.getElementById('name-input').value = '';
   document.getElementById('score-input').value = '';
 };
+
+const displayData = list => {
+  const playerList = document.getElementById('score-list');
+  list.forEach((player) => {
+    const eachPlayer = document.createElement('li');
+    const playerNameHolder = document.createElement('span');
+    const playerScoreHolder = document.createElement('span');
+    
+    eachPlayer.className = 'list-item';
+    playerNameHolder.className = 'player';
+    playerScoreHolder.className = 'score';
+
+    playerNameHolder.textContent = player.user;
+    playerScoreHolder.textContent = player.score;
+    
+    eachPlayer.append(playerNameHolder, playerScoreHolder)
+    playerList.append(eachPlayer)
+  });
+}
 
 document.getElementById('submit').addEventListener('click', () => sendData());
 
