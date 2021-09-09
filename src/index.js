@@ -19,8 +19,8 @@ const sendData = async () => {
   const newScoreObj = {
     "user": document.getElementById('name-input').value,
     "score": document.getElementById('score-input').value
-  }
-  console.log(newScoreObj);
+  };
+
   (await fetch(baseUrl, {
     method: 'POST',
     headers: {
@@ -28,6 +28,7 @@ const sendData = async () => {
     },
     body: JSON.stringify(newScoreObj),
   })).json();
+
   document.getElementById('name-input').value = '';
   document.getElementById('score-input').value = '';
 };
