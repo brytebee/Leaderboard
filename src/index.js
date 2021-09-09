@@ -17,8 +17,8 @@ const getData = async () => {
 
 const sendData = async () => {
   const newScoreObj = {
-    "user": document.getElementById('name-input').value,
-    "score": document.getElementById('score-input').value
+    user: document.getElementById('name-input').value,
+    score: document.getElementById('score-input').value,
   };
 
   (await fetch(baseUrl, {
