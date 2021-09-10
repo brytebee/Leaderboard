@@ -27,6 +27,10 @@ const displayData = (list) => {
   }
 
   list = list.sort((a, b) => b.score - a.score);
+  let winner = document.createElement('p');
+  list.slice(0,1).forEach((win) => winner.textContent = `The current leader is ${win.user} with a score of ${win.score}`);
+  winner.style.color = 'green';
+  playerList.appendChild(winner);
 
   list.forEach((player) => {
     const eachPlayer = document.createElement('li');
@@ -34,8 +38,11 @@ const displayData = (list) => {
     const playerScoreHolder = document.createElement('span');
 
     eachPlayer.className = 'list-item';
+    eachPlayer.style.fontSize = '24px';
     playerNameHolder.className = 'player';
+    playerNameHolder.style.marginBottom = '8px';
     playerScoreHolder.className = 'score';
+    playerScoreHolder.style.float = 'right';
 
     playerNameHolder.textContent = player.user;
     playerScoreHolder.textContent = player.score;
