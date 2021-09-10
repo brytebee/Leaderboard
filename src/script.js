@@ -26,14 +26,27 @@ const displayData = (list) => {
     playerList.removeChild(playerList.firstChild);
   }
 
+  list = list.sort((a, b) => b.score - a.score);
+  const winner = document.createElement('p');
+  list.slice(0, 1).forEach((win) => {
+    winner.textContent = `The current leader is ${win.user} with a score of ${win.score}`;
+  });
+  winner.style.color = 'red';
+  winner.style.fontSize = '20px';
+  winner.style.textAlign = 'center';
+  playerList.appendChild(winner);
+
   list.forEach((player) => {
     const eachPlayer = document.createElement('li');
     const playerNameHolder = document.createElement('span');
     const playerScoreHolder = document.createElement('span');
 
     eachPlayer.className = 'list-item';
+    eachPlayer.style.fontSize = '24px';
     playerNameHolder.className = 'player';
+    playerNameHolder.style.marginBottom = '8px';
     playerScoreHolder.className = 'score';
+    playerScoreHolder.style.float = 'right';
 
     playerNameHolder.textContent = player.user;
     playerScoreHolder.textContent = player.score;
