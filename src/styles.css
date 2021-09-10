@@ -30,6 +30,8 @@ body {
   list-style: none;
   width: 300px;
   padding-inline-start: 0;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 #score-list > li {
