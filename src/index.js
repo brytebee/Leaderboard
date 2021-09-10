@@ -1,6 +1,6 @@
 import './styles.css';
 import {
-  getData, sendData
+  getData, sendData,
 } from './script.js';
 
 document.getElementById('submit').addEventListener('click', () => sendData());

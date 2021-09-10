@@ -19,9 +19,9 @@ const sendData = async () => {
   document.getElementById('score-input').value = '';
 };
 
-const displayData = list => {
+const displayData = (list) => {
   const playerList = document.getElementById('score-list');
-  
+
   while (playerList.firstChild) {
     playerList.removeChild(playerList.firstChild);
   }
@@ -37,7 +37,7 @@ const displayData = list => {
 
     playerNameHolder.textContent = player.user;
     playerScoreHolder.textContent = player.score;
-    
+
     eachPlayer.append(playerNameHolder, playerScoreHolder);
     playerList.append(eachPlayer);
   });
@@ -51,5 +51,5 @@ const getData = async () => {
 };
 
 export {
-  getData, sendData
+  getData, sendData,
 };
