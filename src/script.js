@@ -26,6 +26,8 @@ const displayData = (list) => {
     playerList.removeChild(playerList.firstChild);
   }
 
+  list = list.sort((a, b) => b.score - a.score);
+
   list.forEach((player) => {
     const eachPlayer = document.createElement('li');
     const playerNameHolder = document.createElement('span');
