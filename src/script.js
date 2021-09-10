@@ -28,7 +28,9 @@ const displayData = (list) => {
 
   list = list.sort((a, b) => b.score - a.score);
   const winner = document.createElement('p');
-  list.slice(0,1).forEach((win) => winner.textContent += `The current leader is ${win.user} with a score of ${win.score}`);
+  list.slice(0, 1).forEach((win) => {
+    winner.textContent = `The current leader is ${win.user} with a score of ${win.score}`
+  });
   winner.style.color = 'red';
   winner.style.fontSize = '20px';
   winner.style.textAlign = 'center';
