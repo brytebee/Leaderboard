@@ -1,0 +1,108 @@
+body {
+  margin: 7% 25%;
+  background-color: seashell;
+}
+
+input {
+  height: 30px;
+  font-size: medium;
+}
+
+#main {
+  display: flex;
+}
+
+.title {
+  color: rgb(255, 102, 0);
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+#page-title {
+  margin-bottom: 70px;
+  font-size: 3.5rem;
+  text-shadow: 3px 2px black;
+}
+
+.flex {
+  display: flex;
+}
+
+#scores {
+  margin-right: 15%;
+}
+
+#refresh-button {
+  height: 40px;
+  margin-left: auto;
+  align-self: center;
+}
+
+#form {
+  flex-direction: column;
+  align-items: center;
+}
+
+#score-list {
+  border: 3px solid rgba(255, 255, 255, 0);
+  box-shadow: 1px 2px rgb(20, 20, 19);
+  list-style: none;
+  width: 300px;
+  padding-inline-start: 0;
+  flex-direction: column;
+  background-color: rgb(253, 253, 253);
+}
+
+#score-list > li {
+  padding: 5px 0 5px 10px;
+}
+
+#score-list > li:nth-of-type(odd) {
+  background-color: #e9e9f9;
+}
+
+#list-item {
+  background-color: #e9e9f9;
+}
+
+button {
+  background-color: black;
+  border: 1px solid black;
+  color: white;
+  font-size: larger;
+  border-radius: 13px;
+  padding: 8px;
+  width: 90px;
+}
+
+#submit {
+  align-self: flex-end;
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    margin: 2% 5%;
+  }
+
+  #main {
+    display: block;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  #page-title {
+    margin-bottom: 20px;
+    font-size: 2.7rem;
+    text-align: center;
+  }
+
+  #score-list {
+    width: 100%;
+  }
+
+  #submit {
+    align-self: center;
+  }
+}
